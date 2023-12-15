@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip</title>
+  </head>
+  <body>
+    <script>
+      // 6f. Generate a random number with Math.random(). Save it in a variable.
+      const randomNumber = Math.random();
+      let result = "";
+      // 6g. Create an if-statement and check: If the number is less than 0.5, then display 'heads' in the console. Else display ' tails' in the console.
+      //   if (randomNumber < 0.5) {
+      //     result = "heads";
+      //   } else {
+      //     result = "tails";
+      //   }
+      result = randomNumber < 0.5 ? "heads" : "tails";
+      //   6h. Instead of displaying 'heads' or 'tails' in the console, save the result in a variable called 'result'.
+      //   6i. Let's say we're trying to guess the result. Create a variable called 'guess' and save your guess ('heads' or 'tails'). If your guess matches the result, disply 'You win!' in the console. If your guess does not match the result, disply 'You lose'.
+      const guess = "tails";
+      //   if (guess === result) {
+      //     console.log("You win!");
+      //   } else {
+      //     console.log("You lose!");
+      //   }
+      console.log(guess === result ? "You win!" : "You lose!");
+      //   6j. Instead of using if-statements in the previous exercises, try switching them into ternary operators (condition ? A : B).
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6 - Booleans and If-Statements</title>
+  </head>
+  <body>
+    <script>
+      // Ternary operator
+      const result = true ? "truthy" : "falsy";
+      console.log(result);
+      // Guard Operator &&
+      const message = false && "hello";
+      console.log(message);
+      // Default Operator ||
+      const currency = undefined || "MEX";
+      console.log(currency);
+      //   6a. Create a variable called 'hour' anda save the current hour of the day(use 24-hour format and save it as a number between 0 and 23). If hour is between 6 and 12, display 'Good mornign!' in the console. If hour is between 13 and 17, display 'Good afternoon!' in the consele. Otherwise, display 'Good night!' in the console.
+      const hour = new Date().getHours();
+      const name = "Chent";
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good morning! ${name}`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good afternoon! ${name}`);
+      } else {
+        console.log(`Good night! ${name}`);
+      }
+      //   6b. Continuing from 6a, try changing the value in the 'hour' variable to make it display different messages.
+      // 6c. Continuing from 6a, create a variable called 'name' and save your name inside (as a string). Update the if-statement to display your name in each message.
+      //   6d. Imagine an amusement park that has a discount for children (6 years and younger) or seniors (65 years and older). Create a variable 'age' and save a person's age inside. Create an if-statement that checks if the person qualifies for a discount. if they do, display 'Discount' in the console. Otherwise, display 'No discount' in the console.
+      const age = 26;
+      const isHoliday = false;
+      if ((age <= 6 || age >= 65) && isHoliday === false) {
+        console.log("Discount");
+      } else {
+        console.log("No discount");
+      }
+      //   6e. Continuing from exercise 6d, let's say the discount is only available if it is not a holiday. Create a variable: const isHoliday = true;. Update the code so that in order to get a discount, people musy meet the age requirement and it is also not a holiday.
+    </script>
+  </body>
+</html>
