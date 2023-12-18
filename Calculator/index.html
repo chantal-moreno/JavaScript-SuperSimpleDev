@@ -37,17 +37,25 @@
       </button>
       <button onclick="console.log(updateCalculation('/'));">/</button>
     </div>
-    <button onclick="calculation = '';">Clear</button>
+    <button
+      onclick="calculation = ''; localStorage.setItem('calculation', calculation);"
+    >
+      Clear
+    </button>
     <!-- 5q. When we click the '=' button, use the code: eval(calculation); (eval(...) converts the calculation string into actual math). Save the result back in 'calculation': calculation = eval(calculation);.Display the result in the console. -->
 
     <!-- 5r. Create the rest of buttons in the calculator. -->
     <script>
       // 5n. Create a script, create a variable called 'calculation', and save an empty string inside: let calculation '';
-      let calculation = "";
+      let calculation = localStorage.getItem('calculation') || '';
+      console.log(calculation);
       // 7g. Create a function 'updateCalculation' and reuse the code.
       function updateCalculation(character) {
-        return (calculation += character);
+        calculation += character;
+        localStorage.setItem('calculation', calculation);
+        return calculation;
       }
+      // 8h. We'll add localStorage. Whenever we update the calculation, save it using .setItem(). When the page is loaded, get the calculation using .getItem(). Use a default value of '' if calculation doesn't exist in local storage
     </script>
   </body>
 </html>
