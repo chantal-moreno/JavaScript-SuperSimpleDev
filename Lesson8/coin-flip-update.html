@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip</title>
+  </head>
+  <body>
+    <button onclick="console.log(playGame('heads'));">heads</button>
+    <button onclick="console.log(playGame('tails'));">tails</button>
+    <button onclick="localStorage.removeItem('score')">Reset Score</button>
+    <script>
+      //   8i. We'll improve the coin flip gama. Create 2 buttons to play the game. When clicking 'heads' play the game with guess = 'heads'. when clicking 'tails' play the game with guess = 'tails'. Create a function 'playGame(guess)' to reuse the code.
+      let result = '';
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+      };
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        result = randomNumber < 0.5 ? 'heads' : 'tails';
+        console.log(guess === result ? 'You win!' : 'You lose!');
+        if (guess === result) {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        console.log(score);
+        localStorage.setItem('score', JSON.stringify(score));
+      }
+      // 8j. Create a score object {wins:0, losses:0}, update the score each time after playing, and display the score in the console.
+      // 8k. Use localStorage to save and load the score.
+    </script>
+  </body>
+</html>
