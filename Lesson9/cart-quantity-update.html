@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <!-- Lesson 9- Cart Quantity  -->
+    <div>
+      <h1>Cart Quantity</h1>
+      <button onclick=" showCartQuantity(cartQuantity)">Show Quantity</button>
+      <button onclick="console.log(updateCartQuantity(1));">Add to Cart</button>
+      <button onclick="console.log(updateCartQuantity(2));">+2</button>
+      <button onclick="console.log(updateCartQuantity(3));">+3</button>
+      <button onclick="console.log(updateCartQuantity(4));">+4</button>
+      <button onclick="console.log(updateCartQuantity(5));">+5</button>
+      <button onclick="console.log(updateCartQuantity(-1));">
+        Remove from cart
+      </button>
+      <button
+        onclick="
+        if (cartQuantity <= 0) {
+            console.log('Not enough items in the cart');
+        } else {
+            cartQuantity -= 2; 
+            showCartQuantity(cartQuantity);
+        }
+        "
+      >
+        -2
+      </button>
+      <button
+        onclick="
+        if (cartQuantity <= 0) {
+            console.log('Not enough items in the cart');
+        } else {
+            cartQuantity -= 3; 
+            showCartQuantity(cartQuantity);
+        }
+        "
+      >
+        -3
+      </button>
+      <button
+        onclick="cartQuantity = 0; 
+      console.log('Cart was reset.'); showCartQuantity(cartQuantity);"
+      >
+        Reset Cart
+      </button>
+    </div>
+    <p class="js-cart-quantity"></p>
+    <script>
+      let cartQuantity = 0;
+      showCartQuantity(cartQuantity);
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+          return;
+        }
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+        cartQuantity += change;
+        return showCartQuantity(cartQuantity);
+      }
+      // 9i. Create a paragraph to display the quantity. Whenever we update the quantity, display it on the page instead of in the console. Also, display the quantity when page first loads.
+      function showCartQuantity(cartQuantity) {
+        document.querySelector(
+          '.js-cart-quantity'
+        ).innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>

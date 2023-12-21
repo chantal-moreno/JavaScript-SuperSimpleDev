@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 9 - Document Object Model (DOM)</title>
-    <script src="index.js"></script>
   </head>
   <body>
-    <div>
+    <!-- <div>
       <p>YouTube Subscribe Button</p>
       <button onclick="subscribeButton()" class="js-btn-subscribe">
         Subscribe
       </button>
-    </div>
+    </div> -->
     <div>
       <p>Amazon Shipping Calculator</p>
       <p>Orders under $40 = +$10 shipping</p>
@@ -26,5 +25,33 @@
       <button onclick="calculateTotal()">Calculate</button>
       <p class="js-total-cost"></p>
     </div>
+    <!-- Exercises -->
+    <button>9a</button>
+    <button class="js-9b">9b</button>
+    <div>
+      <button onclick="choice('heads');">heads</button>
+      <button onclick="choice('tails');">tails</button>
+      <p class="js-choice"></p>
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="Name"
+        class="js-name-input"
+        onkeydown="handleNameKeyDown(event)"
+      />
+      <button onclick="getName();">Submit</button>
+      <p class="js-message"></p>
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="Type something"
+        class="js-text-input"
+        onkeyup="showText();"
+      />
+      <p class="js-text"></p>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
