@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 9 - Document Object Model (DOM)</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>YouTube Subscribe Button</p>
+      <button onclick="subscribeButton()" class="js-btn-subscribe">
+        Subscribe
+      </button>
+    </div>
+    <div>
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = +$10 shipping</p>
+      <p>Orders over $40 = FREE shipping</p>
+      <input
+        type="text"
+        placeholder="Cost or order"
+        class="js-cost-input"
+        onkeydown="handleCostKeyDown(event)"
+      />
+      <button onclick="calculateTotal()">Calculate</button>
+      <p class="js-total-cost"></p>
+    </div>
+  </body>
+</html>
