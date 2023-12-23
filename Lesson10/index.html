@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 10 - HTML, CSS and JavaScript together</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <p>YouTube Subscribe Button</p>
+      <button
+        onclick="subscribeButton()"
+        class="js-btn-subscribe btn-subscribe"
+      >
+        Subscribe
+      </button>
+    </div>
+    <div>
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = +$10 shipping</p>
+      <p>Orders over $40 = FREE shipping</p>
+      <input
+        type="text"
+        placeholder="Cost or order"
+        class="js-cost-input input-cost"
+        onkeydown="handleCostKeyDown(event)"
+      />
+      <button onclick="calculateTotal()" class="btn-calculate">
+        Calculate
+      </button>
+      <p class="js-total-cost"></p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
