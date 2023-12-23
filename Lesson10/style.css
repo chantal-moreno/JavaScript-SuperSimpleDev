@@ -2,9 +2,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 div {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
-.btn-subscribe {
+/* .btn-subscribe {
   background-color: black;
   color: white;
   font-weight: bold;
@@ -28,4 +28,44 @@ div {
   padding: 10px;
   font-size: medium;
   cursor: pointer;
+} */
+
+/* Exercises */
+.btn-amazon {
+  background-color: rgb(255, 216, 20);
+  font-size: medium;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 30px;
+}
+.btn-request {
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.btn-schedule {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.btn-gaming,
+.btn-music,
+.btn-tech {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.is-toggled {
+  background-color: black;
+  color: white;
+}
+.error {
+  color: red;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
+    <!-- <div>
       <p>YouTube Subscribe Button</p>
       <button
         onclick="subscribeButton()"
@@ -15,7 +15,7 @@
       >
         Subscribe
       </button>
-    </div>
+    </div> -->
     <div>
       <p>Amazon Shipping Calculator</p>
       <p>Orders under $40 = +$10 shipping</p>
@@ -26,11 +26,44 @@
         class="js-cost-input input-cost"
         onkeydown="handleCostKeyDown(event)"
       />
-      <button onclick="calculateTotal()" class="btn-calculate">
+      <button
+        onclick="calculateTotal();  errorMesssage()"
+        class="btn-calculate"
+      >
         Calculate
       </button>
       <p class="js-total-cost"></p>
     </div>
+
+    <!-- Exercises -->
+    <!-- Create the following buttons using HTML ans CSS. -->
+    <!-- 10a. Amazon button -->
+    <div>
+      <button class="btn-amazon">Add to Cart</button>
+    </div>
+    <!-- 10b. Uber buttons -->
+    <div>
+      <button class="btn-request">Request now</button>
+      <button class="btn-schedule">Schedule for later</button>
+    </div>
+    <!-- 10c. Create a button test. Use document.queySelector() and classList.contains() to check if this button has a class -->
+    <div>
+      <button class="js-button">Test</button>
+    </div>
+    <!-- 10d. Create a button. When clicking this button, it shoul turn ON/OFF -->
+    <div>
+      <button onclick="toggleButton('.btn-gaming')" class="btn-gaming">
+        Gaming
+      </button>
+      <!-- 10e. Continuing from 10d, create 3 button that can be turned ON/OFF -->
+      <button onclick="toggleButton('.btn-music')" class="btn-music">
+        Music
+      </button>
+      <button onclick="toggleButton('.btn-tech')" class="btn-tech">Tech</button>
+    </div>
+    <!-- 10e. Continuing from 10e, use a function to reuse the code -->
+    <!-- 10g. Modify 10f so that only 1 button can be ON at a time -->
+    <!-- 10h. In the Amazon Shipping Calculator, if we type a number less than 0, display ared error message below the text box-->
     <script src="index.js"></script>
   </body>
 </html>
