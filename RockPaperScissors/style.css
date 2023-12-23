@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.pick-move img,
+.moves img {
+  height: 50px;
+}
+.pick-move button {
+  background-color: transparent;
+  padding: 30px;
+  margin: 10px;
+  border: 3px solid white;
+  border-radius: 60px;
+  cursor: pointer;
+}
+.moves {
+  margin: 50px 0;
+}
+.btn-reset {
+  font-size: medium;
+  padding: 10px 15px;
+}

@@ -48,7 +48,8 @@ function playGame(playerMove) {
   document.querySelector('.js-result').innerHTML = result;
   document.querySelector(
     '.js-moves'
-  ).innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+  ).innerHTML = `You <img src="img/${playerMove}-emoji.png" alt="${playerMove}" />
+  <img src="img/${computerMove}-emoji.png" alt="${computerMove}" /> Computer`;
 }
 function updateScoreElement() {
   document.querySelector(
