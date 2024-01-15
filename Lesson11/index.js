@@ -5,8 +5,21 @@ renderTodoList();
 function renderTodoList() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
   let todoListHTML = '';
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
+  // for (let i = 0; i < todoList.length; i++) {
+  //   const todoObject = todoList[i];
+  //   const { name, dueDate } = todoObject;
+  //   const html = `
+  //   <div>
+  //     ${name}
+  //   </div>
+  //   <div>
+  //     ${dueDate}
+  //   </div>
+  //   <button onclick="removeTodo(${i})">Delete</button>
+  //   `;
+  //   todoListHTML += html;
+  // }
+  todoList.forEach(function (todoObject, index) {
     const { name, dueDate } = todoObject;
     const html = `
     <div>
@@ -15,10 +28,10 @@ function renderTodoList() {
     <div>
       ${dueDate} 
     </div>
-    <button onclick="removeTodo(${i})">Delete</button>
+    <button onclick="removeTodo(${index})">Delete</button>
     `;
     todoListHTML += html;
-  }
+  });
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
