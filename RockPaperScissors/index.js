@@ -6,23 +6,67 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+document
+  .querySelector('.js-btn-rock')
+  .addEventListener('click', () => playGame('rock'));
+document
+  .querySelector('.js-btn-paper')
+  .addEventListener('click', () => playGame('paper'));
+document
+  .querySelector('.js-btn-scissors')
+  .addEventListener('click', () => playGame('scissors'));
+document
+  .querySelector('.js-btn-reset')
+  .addEventListener('click', () => resetScore());
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key === 's') {
+    playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
+  }
+});
+
 let isAutoPlaying = false;
 let intervalId;
+let elementAutoPlay = document.querySelector('.js-btn-auto-play');
+elementAutoPlay.addEventListener('click', () => autoPlay());
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
-    document.querySelector('.btn-auto-play').innerHTML = 'Stop Autp play';
+    elementAutoPlay.innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
-    document.querySelector('.btn-auto-play').innerHTML = 'Auto play';
+    elementAutoPlay.innerHTML = 'Auto play';
   }
 }
-
+function resetScore() {
+  let confirmationMessage = document.querySelector('.js-confirmation-message');
+  confirmationMessage.innerHTML = `<p>Are you sure you want to reset the score?</p>
+  <button class="js-btn-yes">Yes</button>
+  <button class="js-btn-no">No</button>`;
+  document.querySelector('.js-btn-yes').addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    confirmationMessage.innerHTML = '';
+  });
+  document
+    .querySelector('.js-btn-no')
+    .addEventListener('click', () => (confirmationMessage.innerHTML = ''));
+}
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = '';

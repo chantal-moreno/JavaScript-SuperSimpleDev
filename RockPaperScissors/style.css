@@ -23,3 +23,8 @@ body {
   font-size: medium;
   padding: 10px 15px;
 }
+.confirmation-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -9,26 +9,22 @@
   <body>
     <h1>Rock, Paper, Scissors</h1>
     <div class="pick-move">
-      <button onclick="playGame('rock')">
+      <button class="js-btn-rock">
         <img src="img/rock-emoji.png" alt="rock-emoji" />
       </button>
-      <button onclick="playGame('paper')">
+      <button class="js-btn-paper">
         <img src="img/paper-emoji.png" alt="paper-emoji" />
       </button>
-      <button onclick="playGame('scissors');">
+      <button class="js-btn-scissors">
         <img src="img/scissors-emoji.png" alt="scissors-emoji" />
       </button>
     </div>
     <h2 class="js-result"></h2>
     <p class="js-moves moves"></p>
     <p class="js-score"></p>
-    <button
-      onclick="score.wins=0; score.losses=0; score.ties=0;localStorage.removeItem('score'); updateScoreElement()"
-      class="btn-reset"
-    >
-      Reset Score
-    </button>
-    <button class="btn-auto-play" onclick="autoPlay();">Auto play</button>
+    <button class="btn-reset js-btn-reset">Reset Score</button>
+    <button class="btn-auto-play js-btn-auto-play">Auto play</button>
+    <div class="js-confirmation-message confirmation-message"></div>
     <script src="index.js"></script>
   </body>
 </html>
